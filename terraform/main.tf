@@ -36,7 +36,7 @@ resource "helm_release" "flux-sync" {
     repository       = "https://fluxcd-community.github.io/helm-charts"
     chart            = "flux2-sync"
     name             = "flux2-sync"
-    namespace        = "bancaempresas"
+    namespace        = "flux-system"
     create_namespace = true
     set {
         name  = "gitRepository.spec.url"
@@ -45,5 +45,9 @@ resource "helm_release" "flux-sync" {
     set {
         name  = "gitRepository.spec.secretRef.name"
         value = "secret-git-credentials"
+    }
+    set {
+        name = "gitRepository.spec.interval"
+        value = "1m"
     }
 }
