@@ -1,0 +1,15 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: bbe-msa-sp-users-v1
+  namespace: bancaempresas
+spec:
+  chart:
+    spec:
+      chart: crd-microservice
+      version: 5.0.0
+      valuesFiles:
+       - values.yml
+      sourceRef:
+        kind: HelmRepository
+        name: bp-helm-repo
