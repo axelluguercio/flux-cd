@@ -4,5 +4,5 @@ metadata:
   name: bp-helm-repo
   namespace: flux-system
 spec:
-  interval: 1m
+  interval: 1m0s
   url: https://prodpichinchatfstate.blob.core.windows.net/bp-helm-charts/
