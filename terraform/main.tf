@@ -12,9 +12,6 @@ resource "kind_cluster" "kind" {
         node {
             role =  "worker"
         }
-        node {
-            role =  "worker"
-        }
     }
 }
 
@@ -33,10 +30,6 @@ resource "helm_release" "flux-cd" {
   name             = "flux2"
   namespace        = "flux-system"
   create_namespace = true
-  set {
-    name = "kustomizeController.create"
-    value = "true"
-  }
 }
 
 resource "helm_release" "flux-sync" {
