@@ -1,0 +1,8 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: bp-helm-repo
+  namespace: bancaempresas
+spec:
+  interval: 1m
+  url: https://prodpichinchatfstate.blob.core.windows.net/bp-helm-charts/

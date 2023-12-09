@@ -13,3 +13,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: bp-helm-repo
+  valuesFrom:
+  - kind: ConfigMap
+    name: values-bbe-msa-sp-users-v1
+    valuesKey: values.yml
