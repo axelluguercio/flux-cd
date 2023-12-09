@@ -47,7 +47,7 @@ resource "helm_release" "flux-sync" {
     create_namespace = true
     set {
         name  = "gitRepository.spec.url"
-        value = "ssh://git@github.com:axelluguercio/flux-cd.git"
+        value = "ssh://git@github.com/axelluguercio/flux-cd.git"
     }
     set {
         name  = "gitRepository.spec.secretRef.name"
